@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Monthsary, Sayangku ♡</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600;700&display=swap');
+:root{--pink:#ff78ad;--rose:#ff477e;--gold:#ffd98b;--ink:#10081d;--glass:rgba(255,255,255,.075)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:#fff6fb;font-family:'DM Sans',sans-serif;background:radial-gradient(ellipse at 50% 15%,#4a1748 0%,#21102f 42%,#0b0717 100%);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(120deg,transparent 20%,rgba(255,120,173,.045),transparent 70%);z-index:0}
+#stars,.hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;opacity:.55;animation:twinkle 3s infinite ease-in-out}
+@keyframes twinkle{50%{opacity:.12;transform:scale(.5)}}
+.heart{position:absolute;bottom:-40px;color:#ff77ad;opacity:.45;animation:floatUp linear forwards}
+@keyframes floatUp{to{transform:translateY(-110vh) rotate(30deg);opacity:0}}
+main{position:relative;z-index:1;max-width:850px;margin:auto;padding:24px 18px 70px}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:.78rem;letter-spacing:.13em;color:#e8b9dc;text-transform:uppercase}
+.pill{border:1px solid #ffffff28;border-radius:99px;padding:8px 12px;background:#ffffff09}
+.music{border:1px solid #ff9bc9;color:#fff;background:#351b40;padding:10px 14px;border-radius:99px;cursor:pointer}
+.music:hover,button:hover{transform:translateY(-2px);filter:brightness(1.12)}
+.hero{text-align:center;padding:62px 12px 32px}
+.eyebrow{color:var(--gold);letter-spacing:.22em;text-transform:uppercase;font-size:.76rem}
+h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,8vw,5rem);line-height:1.08;margin:16px 0;background:linear-gradient(110deg,#fff5fb,#ff9ecb,#ffe4a7);-webkit-background-clip:text;background-clip:text;color:transparent}
+.subtitle{color:#eac9e5;font-size:1rem}
+.bigheart{font-size:5.4rem;display:inline-block;filter:drop-shadow(0 0 25px #ff579d);animation:pulse 1.8s ease-in-out infinite;margin:15px 0}
+@keyframes pulse{50%{transform:scale(1.12)}}
+.card{background:var(--glass);border:1px solid #ffffff18;border-radius:24px;padding:clamp(20px,5vw,34px);box-shadow:0 18px 60px #05020b50;backdrop-filter:blur(12px);margin:18px 0}
+.message{font-family:'Playfair Display',serif;font-size:clamp(1.05rem,3vw,1.35rem);line-height:1.9;text-align:center;color:#ffe8f5}
+.message p{margin:8px 0}
+.name{color:var(--gold)}
+.buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:24px}
+button{font:inherit;transition:.2s;cursor:pointer}
+.primary{background:linear-gradient(120deg,#ff5798,#b34bba);color:white;border:0;border-radius:99px;padding:13px 22px;font-weight:700;box-shadow:0 8px 25px #ff579833}
+.secondary{background:#ffffff0a;border:1px solid #ffffff35;color:#fff;border-radius:99px;padding:12px 20px}
+.section-title{text-align:center;font-family:'Playfair Display',serif;font-size:1.65rem;margin:0 0 12px}
+.muted{text-align:center;color:#cbb6d4}
+#quiz{display:none}
+.progress{height:5px;background:#ffffff15;border-radius:99px;overflow:hidden;margin:18px 0 26px}
+.progress span{height:100%;display:block;background:linear-gradient(90deg,var(--rose),var(--gold));width:0;transition:.3s}
+.question{text-align:center;font-family:'Playfair Display',serif;font-size:1.35rem;margin:18px 0 22px}
+.options{display:grid;gap:10px}
+.option{width:100%;padding:14px 16px;border-radius:14px;text-align:left;color:#fff;background:#ffffff0a;border:1px solid #ffffff24}
+.option.correct{border-color:var(--gold);background:#a35b5830;color:#ffe6a3}
+.option.wrong{opacity:.45}
+.feedback{min-height:48px;text-align:center;color:var(--gold);margin:18px 0;font-family:'Playfair Display',serif}
+#finale{display:none;text-align:center}
+.finalheart{font-size:6rem;animation:pulse 1.6s infinite;filter:drop-shadow(0 0 30px #ff4d95)}
+.finaltext{font-family:'Playfair Display',serif;font-size:1.2rem;line-height:1.8;color:#ffe7f4}
+footer{text-align:center;color:#9e87af;font-size:.8rem;margin-top:30px}
+@media(max-width:550px){.hero{padding-top:42px}.topbar{letter-spacing:.06em}.card{border-radius:19px}.question{font-size:1.15rem}}
+</style>
+</head>
+<body>
+<div id="stars"></div><div class="hearts" id="hearts"></div>
+<main>
+<div class="topbar"><span class="pill">♡ love.exe · monthsary edition</span><button class="music" id="musicBtn">♫ Putar musik</button></div>
+<section class="hero" id="welcome">
+<div class="eyebrow">sebuah pesan kecil untuk seseorang yang istimewa</div>
+<div class="bigheart">♡</div>
+<h1>Happy Monthsary</h1>
+<div class="subtitle">Untuk <span class="name">Winda Evilia Shandy</span>, sayangku.</div>
+<div class="buttons"><button class="primary" id="openBtn">Buka surat cinta ♡</button></div>
+</section>
+<section class="card message" id="letter" style="display:none">
+<p>Terima kasih sudah hadir dan mewarnai hari-hariku.</p>
+<p>Bagiku, kamu adalah seseorang yang begitu berharga.</p>
+<p>Hari ini, besok, dan di bulan-bulan seterusnya,</p>
+<p>semoga kita selalu bersama, tumbuh, dan bahagia.</p>
+<p>Kalau dunia sedang terasa berat, semoga kita bisa jadi tempat pulang satu sama lain.</p>
+<p><span class="name">I love you, sayangku ♡</span></p>
+<div class="buttons"><button class="primary" id="quizBtn">Main tebak-tebakan cinta ✨</button><button class="secondary" id="heartBtn">Kirim hati ♡</button></div>
+</section>
+<section class="card" id="quiz">
+<h2 class="section-title">Tebak-tebakan cinta 💗</h2><p class="muted">Jawab pertanyaan kecil ini, ya!</p>
+<div class="progress"><span id="progress"></span></div><div id="qnum" class="eyebrow" style="text-align:center"></div>
+<div class="question" id="question"></div><div class="options" id="options"></div><div class="feedback" id="feedback"></div>
+<div class="buttons"><button class="primary" id="nextBtn" style="display:none">Lanjut ♡</button></div>
+</section>
+<section class="card" id="finale">
+<div class="finalheart">♥</div><h2 class="section-title">Untuk Sayangku</h2>
+<div class="finaltext"><p>Skor kamu: <b id="score"></b></p><p>Apapun skornya, kamu tetap juara di hatiku.</p><p>Terima kasih sudah menjadi alasan aku tersenyum.</p><p>Semoga cerita kita terus berlanjut, bukan cuma hari ini, tapi untuk hari-hari yang akan datang.</p><p class="name">I love you, Winda. Selalu ♡</p></div>
+<div class="buttons"><button class="primary" id="againBtn">Main lagi</button><button class="secondary" id="backBtn">Baca surat lagi</button></div>
+</section>
+<footer>Dibuat dengan sepenuh hati · klik di mana saja untuk membuat hati kecil ✦</footer>
+</main>
+<script>
+const starBox=document.getElementById('stars');
+for(let i=0;i<100;i++){let s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*3+'s';starBox.appendChild(s)}
+function floatingHeart(){let h=document.createElement('span');h.className='heart';h.textContent=['♡','♥','✦'][Math.floor(Math.random()*3)];h.style.left=Math.random()*100+'%';h.style.fontSize=(12+Math.random()*22)+'px';h.style.animationDuration=(6+Math.random()*7)+'s';document.getElementById('hearts').appendChild(h);setTimeout(()=>h.remove(),14000)}
+setInterval(floatingHeart,700);
+document.addEventListener('click',e=>{if(e.target.closest('button'))return;let h=document.createElement('span');h.className='heart';h.textContent='♥';h.style.left=e.clientX+'px';h.style.bottom=(innerHeight-e.clientY)+'px';h.style.fontSize='25px';h.style.animationDuration='3s';document.getElementById('hearts').appendChild(h);setTimeout(()=>h.remove(),3500)});
+const openBtn=document.getElementById('openBtn'),letter=document.getElementById('letter'),quiz=document.getElementById('quiz'),finale=document.getElementById('finale');
+openBtn.onclick=()=>{letter.style.display='block';openBtn.parentElement.style.display='none';letter.scrollIntoView({behavior:'smooth'})};
+document.getElementById('heartBtn').onclick=()=>{for(let i=0;i<18;i++)setTimeout(floatingHeart,i*80)};
+const data=[
+{q:'Apa yang makin dibagi justru makin bertambah?',o:['Uang jajan','Cinta','Kue ulang tahun'],a:1,r:'Betul! Cinta makin dibagi makin banyak, apalagi kalau dibagi sama kamu ♡',w:'Hmm, coba pikirkan sesuatu yang bikin hati hangat.'},
+{q:'Kalau kamu adalah kunci, maka aku adalah…?',o:['Pintu kamar','Gembok yang hanya bisa dibuka olehmu','Jendela terbuka'],a:1,r:'Tepat! Hatiku cuma bisa dibuka sama kamu.',w:'Belum tepat, coba lagi ya sayang ♡'},
+{q:'Kenapa aku nggak pernah tersesat?',o:['Karena pakai Google Maps','Karena semua jalan menuju kamu','Karena hafal semua jalan'],a:1,r:'Benar! Ke mana pun aku melangkah, ujungnya selalu kamu.',w:'Coba pikirkan arah hatiku ♡'},
+{q:'Aku akan sayang kamu sampai kapan?',o:['Sampai besok','Sampai bulan depan','Selamanya, tanpa tanggal kedaluwarsa'],a:2,r:'Yap! Sayangku nggak punya tanggal kedaluwarsa ♡',w:'Eh, kok pendek banget? Coba lagi ya.'},
+{q:'Siapa yang paling spesial di hatiku?',o:['Winda','Evilia','Shandy'],a:'all',r:'Semua jawaban benar, karena semuanya adalah kamu, sayangku! ♡',w:''}
+];
+let qi=0,score=0,wrong=false;
+function showQ(){document.getElementById('qnum').textContent=`PERTANYAAN ${qi+1} / ${data.length}`;document.getElementById('progress').style.width=(qi/data.length*100)+'%';document.getElementById('question').textContent=data[qi].q;document.getElementById('feedback').textContent='';document.getElementById('nextBtn').style.display='none';let opts=document.getElementById('options');opts.innerHTML='';data[qi].o.forEach((o,i)=>{let b=document.createElement('button');b.className='option';b.textContent=o;b.onclick=()=>answer(i,b);opts.appendChild(b)})}
+function answer(i,b){if(document.getElementById('nextBtn').style.display!=='none')return;let correct=data[qi].a==='all'||i===data[qi].a;let buttons=[...document.querySelectorAll('.option')];if(correct){if(!wrong)score++;buttons.forEach(x=>x.disabled=true);b.classList.add('correct');document.getElementById('feedback').textContent=data[qi].r;document.getElementById('nextBtn').style.display='inline-block'}else{wrong=true;b.disabled=true;b.classList.add('wrong');document.getElementById('feedback').textContent=data[qi].w}}
+document.getElementById('quizBtn').onclick=()=>{quiz.style.display='block';letter.style.display='none';qi=0;score=0;wrong=false;showQ();quiz.scrollIntoView({behavior:'smooth'})};
+document.getElementById('nextBtn').onclick=()=>{qi++;wrong=false;if(qi>=data.length){quiz.style.display='none';finale.style.display='block';document.getElementById('score').textContent=score+'/'+data.length;finale.scrollIntoView({behavior:'smooth'});for(let i=0;i<30;i++)setTimeout(floatingHeart,i*100)}else showQ()};
+document.getElementById('againBtn').onclick=()=>{finale.style.display='none';quiz.style.display='block';qi=0;score=0;wrong=false;showQ();quiz.scrollIntoView({behavior:'smooth'})};
+document.getElementById('backBtn').onclick=()=>{finale.style.display='none';letter.style.display='block';letter.scrollIntoView({behavior:'smooth'})};
+// Musik romantis sederhana dibuat dengan Web Audio (tidak memerlukan file MP3).
+let audioCtx,playing=false,timer,step=0;const notes=[261.63,329.63,392,329.63,293.66,349.23,440,349.23,261.63,329.63,392,523.25,440,392,349.23,293.66];
+function playNote(freq,dur=.42){if(!audioCtx)return;let osc=audioCtx.createOscillator(),gain=audioCtx.createGain();osc.type='sine';osc.frequency.value=freq;gain.gain.setValueAtTime(.0001,audioCtx.currentTime);gain.gain.exponentialRampToValueAtTime(.08,audioCtx.currentTime+.03);gain.gain.exponentialRampToValueAtTime(.0001,audioCtx.currentTime+dur);osc.connect(gain);gain.connect(audioCtx.destination);osc.start();osc.stop(audioCtx.currentTime+dur)}
+function melody(){if(!playing)return;playNote(notes[step%notes.length]);if(step%4===0)playNote(notes[(step+4)%notes.length]/2,.7);step++;timer=setTimeout(melody,480)}
+document.getElementById('musicBtn').onclick=async()=>{if(!audioCtx)audioCtx=new(window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended')await audioCtx.resume();playing=!playing;if(playing){melody();document.getElementById('musicBtn').textContent='♫ Musik: ON'}else{clearTimeout(timer);document.getElementById('musicBtn').textContent='♫ Putar musik'}};
+</script>
+</body>
+</html>
